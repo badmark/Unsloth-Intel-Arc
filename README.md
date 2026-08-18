@@ -7,17 +7,18 @@ I was unable to find a working Dockerfile to run Unsloth with an Intel Arc GPU a
 
 `docker build -t unsloth-intel-arc:latest .`
 
-
-`docker run -d \
+```
+docker run -d \
   --name unsloth-intel-container \
   --user root \
-  -e LD_LIBRARY_PATH="/root/.unsloth/studio/unsloth_studio/lib/python3.12/site-packages/torch/lib:/usr/local/lib:$LD_LIBRARY_PATH" \
+  -e LD_LIBRARY_PATH="/root/.unsloth/studio/unsloth_studio/lib/python3.12/site-packages/torch/lib:/usr/local/lib:\$LD_LIBRARY_PATH" \
   --group-add video \
   --group-add 109 \
   --device=/dev/dri \
   -p 8888:8888 \
   -v $(pwd)/work:/workspace/work \
-  unsloth-intel-arc:latest`
+  unsloth-intel-arc:latest
+```
 
 **Once the container is up run the following command to get your bootstrap password which is required to setup a new password. The interface will be avialable on port 8888**
 
