@@ -5,7 +5,7 @@ I was unable to find a working Dockerfile to run Unsloth with an Intel Arc GPU a
 
 **Build and run:**
 
-`docker build --no-cache -t unsloth-intel-arc:latest .`
+`docker build -t unsloth-intel-arc:latest .`
 
 
 `docker run -d \
