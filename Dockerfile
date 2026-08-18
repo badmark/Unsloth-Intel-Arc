@@ -21,11 +21,11 @@ RUN mkdir -p /root/.unsloth/studio && \
 
 RUN /root/.unsloth/studio/unsloth_studio/bin/pip install --no-cache-dir \
     torch==2.11.0+xpu torchvision torchaudio \
-    --index-url https://pytorch.org
+    --index-url https://download.pytorch.org/whl/xpu
 
 RUN /root/.unsloth/studio/unsloth_studio/bin/pip install --no-cache-dir \
     intel-cmplr-lib-rt intel-cmplr-lib-ur intel-cmplr-lic-rt intel-sycl-rt pytorch-triton-xpu \
-    --index-url https://pytorch.org
+    --index-url https://download.pytorch.org/whl/xpu
 
 ENV UNSLOTH_BACKEND=auto
 RUN /root/.unsloth/studio/unsloth_studio/bin/pip install --no-cache-dir unsloth --no-deps && \
